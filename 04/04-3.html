@@ -21,6 +21,7 @@
     var Body = { template: '<p>Body Component</p>' };
     var Header = { template: '<p>Header Component</p>' };
     var Footer = { template: '<p>Footer Component</p>' };
+    var LoginBody = { template: '<p style="font-size:20px;color:#ff0000">Login Body</p>' };
 
     var router = new VueRouter({
       routes : [
@@ -28,6 +29,14 @@
           path: '/',
           components: {
             default: Body,
+            header: Header,
+            footer: Footer
+          }
+        },
+        {
+          path: '/login',
+          components: {
+            default: LoginBody,
             header: Header,
             footer: Footer
           }
