@@ -1,0 +1,28 @@
+<div id="app">
+  <child-component v-on:show-log="printText"></child-component>
+</div>
+
+<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+<script>
+  Vue.component('child-component', {
+    template: '<button v-on:click="showLog">show</button>',
+    methods: {
+      showLog: function() {
+        // console.log("component this : ", this);
+        this.$emit('show-log');
+      }
+    }
+  });
+
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello'
+    },
+    methods: {
+      printText: function() {
+        console.log("data received");
+      }
+    }
+  });
+</script>
